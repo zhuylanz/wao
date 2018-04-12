@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wao API References</title>
+</head>
+<body>
+	<h1>Wao API References</h1>
+	<h2>Functions</h2>
+	<ol>
+		<li><b>SCAN PAGE:</b>
+			<ul>
+				<li><b>Usage:</b> <i><b>GET</b> /scanpage</i></li>
+				<li><b>Parameters:</b> <i><b>uri</b> (str), <b>start</b> (unix timestamp), <b>end</b> (unix timestamp), <b>mode</b> (0 | 1 | 2)</i></li>
+				<li><b>Returns:</b>
+					<ul>
+						<li><b>mode 0 or none:</b> <i><b>utime</b> (time of post in unix timestamp), <b>link</b> (link to the post), <b>react</b> (total number of reactions), <b>share</b> (total number of shares), <b>caption</b> (caption of post), <b>comment</b> (total number of comments but only <b>visible</b> comments)</i></li>
+						<li><b>mode 1:</b> <i><b>utime</b> (time of post in unix timestamp), <b>link</b> (link to the post), <b>react</b> (total number of reactions), <b>share</b> (total number of shares), <b>caption</b> (caption of post), <b>comment</b> (total number of comments including <b>invisible</b> comments)</i> <= This mode takes longer time than mode 0</li>
+						<li><b>mode 2:</b> <i>In development, aims to return all the above information and specific id of each users that interact with the page's posts</i></li>
+					</ul>
+				</li>
+				<br>
+				<li><b>Examples:</b> curl "http://wao.nuhula.website/scanpage?uri=https://www.facebook.com/nuhulacoffee&start_date=1501561354&end_date=1502425354"</li>
+			</ul>
+		</li>
+	</ol>
+</body>
+</html>
